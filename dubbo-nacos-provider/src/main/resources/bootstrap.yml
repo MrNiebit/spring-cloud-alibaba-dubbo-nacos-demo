@@ -1,0 +1,14 @@
+nacos:
+  ip-address: 127.0.0.1
+  port: 8848
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.ip-address}:${nacos.port}
+        # 这里填的是 命名空间的 ID
+        namespace: 2ad34e1d-88bf-4ca3-9df8-76a55c1793cc
+        group: gitsilence-group
+        timeout: 10000
+        file-extension: properties
