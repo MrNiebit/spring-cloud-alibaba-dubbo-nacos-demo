@@ -26,7 +26,22 @@ spring:
         file-extension: properties
 ```
 
-nacos data Id 为配置文件的 文件名
+nacos data Id 命名格式为：${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.file-extension}
 
+${spring.application.name} 为配置文件中配置的实例名
+
+${spring.profiles.active} 为启动的环境类型
+
+${spring.cloud.nacos.file-extension} 文件后缀名
+
+例如: nacos的data Id 为`dubbo-nacos-provider-dev.properties`
+
+此时我们的 `application.properties` 文件中可以配置
+```properties
+spring.application.name=dubbo-nacos-provider
+spring.profiles.active=dev
+```
+
+这样配置 就会使nacos中 dubbo-nacos-provider-dev.properties 配置文件生效
 
 ![](https://ftp.bmp.ovh/imgs/2021/06/75c899c1341100a3.png)
