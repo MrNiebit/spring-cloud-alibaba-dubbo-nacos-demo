@@ -2,7 +2,7 @@
 package cn.lacknb;
 
 import cn.lacknb.common.HelloService;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,23 +21,11 @@ public class DubboNacosConsumerMain {
         SpringApplication.run(DubboNacosConsumerMain.class, args);
     }
 
-    @Reference(version = "${dubbo.service.version}")
+    @DubboReference(version = "${dubbo.registry.version}")
     private HelloService helloService;
 
     @GetMapping("/rpc")
     public String rpcInvoke () {
         return helloService.hello("rpc调用 。。");
     }
-
-//    @Bean
-//    public ApplicationRunner runner () {
-//        return new ApplicationRunner() {
-//            @Override
-//            public void run(ApplicationArguments args) throws Exception {
-//                System.out.println(helloService.hello("consumer"));
-//            }
-//        };
-//    }
-
-
 }

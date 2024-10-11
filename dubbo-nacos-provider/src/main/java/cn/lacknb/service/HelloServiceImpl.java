@@ -2,7 +2,7 @@
 package cn.lacknb.service;
 
 import cn.lacknb.common.HelloService;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 
@@ -11,7 +11,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  * @author niebaohua
  * date 2021/6/3
  */
-@Service(version = "${dubbo.service.version}")
+@DubboService(version = "${dubbo.registry.version}")
 @RefreshScope
 public class HelloServiceImpl implements HelloService {
 

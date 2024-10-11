@@ -1,7 +1,7 @@
 ## Dubbo、Nacos、Spring Cloud Alibaba
 
 实现了nacos的动态配置、Dubbo远程调用
-
+Nacos 版本 v2.2.2
 可以先看Spring Boot Nacos：[https://github.com/MrNiebit/springboot-nacos](https://github.com/MrNiebit/springboot-nacos)
 
 
