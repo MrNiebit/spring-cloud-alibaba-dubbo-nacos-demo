@@ -1,8 +1,14 @@
 ## Dubbo、Nacos、Spring Cloud Alibaba
 
 实现了nacos的动态配置、Dubbo远程调用
-Nacos 版本 v2.2.2
 可以先看Spring Boot Nacos：[https://github.com/MrNiebit/springboot-nacos](https://github.com/MrNiebit/springboot-nacos)
+
+## 版本对应表
+
+| Spring Cloud Alibaba版本 | Spring Boot版本 | Nacos版本 | Dubbo版本 |
+| :----------------------: | :-------------: | :-------: | :-------: |
+|          2.2.10          | 2.3.12.RELEASE  |  v2.2.2   |  3.2.12   |
+
 
 
 ## 注意事项
@@ -10,6 +16,8 @@ Nacos 版本 v2.2.2
 `spring-cloud-context` 该依赖可以让我们使用bootstrap.yml 或者 bootstrap.properties
 由于bootstrap的加载顺序是大于 application文件的，我们可以将一些值设置为变量，在application
 配置文件中引用: `${xxx.xxx}`
+
+**20241013**: 升级新版本，配置是一定要放到bootstrap.yml(或properties)的，由于加载顺序的原因，无法读取到 application.yml 文件中的内容，导致 Nacos 连接失败
 
 nacos的配置 要在bootstrap.yml文件中...
 
